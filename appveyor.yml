@@ -14,7 +14,8 @@ environment:
       CONDA_CHANNELS: "glueviz"
       DEBUG: "True"
       PIP_FALLBACK: "False"
-      CONDA_DEPENDENCIES: "glue-core>=0.11 rasterio>=0.36 pyproj"
+      CONDA_VERSION: "4.5.4"
+      CONDA_DEPENDENCIES: "glue-core rasterio pyproj"
 
   matrix:
       - PYTHON_VERSION: "2.7"
