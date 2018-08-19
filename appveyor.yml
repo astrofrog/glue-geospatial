@@ -1,6 +1,9 @@
 # AppVeyor.com is a Continuous Integration service to build and run tests under
 # Windows
 
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
 environment:
 
   global:
@@ -15,7 +18,7 @@ environment:
       DEBUG: "True"
       PIP_FALLBACK: "False"
       CONDA_VERSION: "4.5.4"
-      CONDA_DEPENDENCIES: "glue-core rasterio pyproj"
+      CONDA_DEPENDENCIES: "glue-core rasterio pyproj nomkl"
 
   matrix:
       - PYTHON_VERSION: "2.7"
